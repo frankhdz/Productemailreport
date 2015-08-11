@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Frankwebdev_Productemailreport>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Frankwebdev_Productemailreport>
+    </modules>
+</config>

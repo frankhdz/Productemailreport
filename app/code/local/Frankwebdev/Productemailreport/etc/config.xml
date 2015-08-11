@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Bubbleup
+ * @package    Frankwebdev_Productemailreport
+ * @author     Damian Alberto Pastorini
+ */
+ -->
+<config>
+    <modules>
+        <Frankwebdev_Productemailreport>
+            <version>0.1.0</version>
+        </Frankwebdev_Productemailreport>
+    </modules>
+    <admin>
+        <routers>
+            <productemailreport>
+                <use>admin</use>
+                <args>
+                    <module>Frankwebdev_Productemailreport</module>
+                    <frontName>productemailreport</frontName>
+                </args>
+            </productemailreport>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <report>
+                <children>
+                    <productemailreport translate="title" module="productemailreport">
+                        <title>Product Email Report</title>
+                        <action>productemailreport/adminhtml_productemailreport</action>
+                        
+                    </productemailreport>
+                </children>
+            </report>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <report>
+                            <children>
+                                <productemailreport translate="title" module="productemailreport">
+                                    <title>Product Email Report</title>
+                                    <action>productemailreport/adminhtml_productemailreport</action>
+                                </productemailreport>
+                            </children>
+                        </report>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <productemailreport>
+                    <file>productemailreport.xml</file>
+                </productemailreport>
+            </updates>
+        </layout>
+    </adminhtml>
+    <global>
+        <models>
+            <productemailreport>
+                <class>Frankwebdev_Productemailreport_Model</class>
+                <resourceModel>productemailreport</resourceModel>
+            </productemailreport>
+        </models>
+        <resources>
+            <productemailreport_setup>
+                <setup>
+                    <module>Frankwebdev_Productemailreport</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </productemailreport_setup>
+            <productemailreport_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </productemailreport_write>
+            <productemailreport_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </productemailreport_read>
+        </resources>
+        <blocks>
+            <productemailreport>
+                <class>Frankwebdev_Productemailreport_Block</class>
+            </productemailreport>
+        </blocks>
+        <helpers>
+            <productemailreport>
+                <class>Frankwebdev_Productemailreport_Helper</class>
+            </productemailreport>
+        </helpers>
+    </global>
+</config>
